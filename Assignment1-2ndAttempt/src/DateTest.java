@@ -29,6 +29,6 @@ class DateTest {
   @Test
   public void monthOKTest() {
     Assert.assertTrue("January", true);
-    // Assert.assertTrue("March", false); //this line is an error - which means success!
+    // Assert.assertTrue("March", false); // this line is an error - which means success!
   }
 }
