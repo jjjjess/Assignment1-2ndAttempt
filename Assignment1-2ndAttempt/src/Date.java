@@ -26,9 +26,7 @@ public class Date {
     setDate(monthString, day, year);
   }
 
-  public Date(int year) {
-    setDate(1, 1, year);
-  }
+  // removed date method
 
   public Date(Date aDate) {
     if (aDate == null)// Not a real date.
@@ -64,9 +62,7 @@ public class Date {
     }
   }
 
-  public void setDate(int year) {
-    setDate(1, 1, year);
-  }
+  // removed setDate method
 
   public void setYear(int year) {
     if ((year < 1000) || (year > 9999)) {
