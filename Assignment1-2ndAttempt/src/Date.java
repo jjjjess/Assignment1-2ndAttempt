@@ -43,7 +43,7 @@ public class Date {
   }
 
   public void setDate(int monthInt, int day, int year) {
-    if (dateOK(monthInt, day, year)) {
+    if (dateConfirmed(monthInt, day, year)) {
       this.month = monthString(monthInt);
       this.day = day;
       this.year = year;
@@ -137,14 +137,15 @@ public class Date {
   }
 
   public void readInput() {
-    boolean tryAgain = true;
-    var keyboard = new Scanner(System.in); // changed from scanner to var
+    var tryAgain = true; // changed from type 'boolean'
+    var input = new Scanner(System.in); // changed from type 'scanner' //changed name from
+                                        // 'keyboard'
     while (tryAgain) {
       System.out.println("Enter month, day, and year.");
       System.out.println("Do not use a comma.");
-      var monthInput = keyboard.next(); // changed from scanner to var
-      var dayInput = keyboard.nextInt(); // changed from scanner to var
-      var yearInput = keyboard.nextInt(); // changed from scanner to var
+      var monthInput = input.next(); // changed from type 'String'
+      var dayInput = input.nextInt(); // changed from type 'int'
+      var yearInput = input.nextInt(); // changed from type 'int'
       if (dateOK(monthInput, dayInput, yearInput)) {
         setDate(monthInput, dayInput, yearInput);
         tryAgain = false;
@@ -153,23 +154,24 @@ public class Date {
     }
   }
 
-  public boolean dateOK(int monthInt, int dayInt, int yearInt) {
+  public boolean dateConfirmed(int monthInt, int dayInt, int yearInt) { // changed from 'dateOK'
     return ((monthInt >= 1) && (monthInt <= 12) && (dayInt >= 1) && (dayInt <= 31)
         && (yearInt >= 1000) && (yearInt <= 9999));
   }
 
   public boolean dateOK(String monthString, int dayInt, int yearInt) {
-    return (monthOK(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
+    return (monthConfirmed(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
         && (yearInt <= 9999));
   }
 
   // Re-written monthOK using Switch statement expression
-  private boolean monthOK(String month) {
+  private boolean monthConfirmed(String month) { // changed from 'monthOK'
     switch (month) {
       case "Janurary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December":
         return true;
     }
-    return true; // not sure if this line is correct - have to double check with prof
+    return true; // not sure if this line (or statement) is entirely correct - have to double check
+                 // with prof
   }
 
   // Re-written monthString() using new Switch statement expression

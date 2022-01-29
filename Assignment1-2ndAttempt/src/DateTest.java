@@ -23,7 +23,8 @@ class DateTest {
 
   @Test
   public void dateOKTest() {
-    Assert.assertTrue(intTest.dateOK(5, 12, 2230));
+    Assert.assertTrue(intTest.dateConfirmed(5, 12, 2230)); // JUnit method changed after refactoring
+                                                           // 'dateOK'
   }
 
   @Test
